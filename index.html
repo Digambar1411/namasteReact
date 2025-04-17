@@ -8,24 +8,27 @@
 <body>
 
   <div id="root">
-    <h1>Hellow World !!</h1>
+    <h1>From Html</h1>
   </div>
-
+ 
   <script>
     const head1 = document.createElement('h1');
-    head1.innerHTML = "Hello world from  Namaste Javascript !!";
-    const root = document.getElementById('root');
+    head1.innerHTML = "Hello world from  Namaste Javascript inline script !!";
+    const jsRoot = document.getElementById('root');
 
     const parent = document.createElement('div');
     const child = document.createElement('p');
     const childTwo = document.createElement('p');
-    child.innerHTML='child 1'
-    childTwo.innerHTML='child 2'
-    parent.appendChild(child, childTwo, 'Hello world');
-
-    root.appendChild(head1);
-    root.appendChild(parent)
+    child.innerHTML='Javascript inline script child 1'
+    childTwo.innerHTML='Javascript inline script child 2'
+    parent.append(child, childTwo, 'Javascript inline script child 3');
+    jsRoot.append(head1,parent);
   </script>
-  
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="/app.js"></script>
+
+  <!-- anything your inline script adds inside #root gets wiped out once React renders but not viceversa. To observe this make network throttling to slow 3G in inspect n/w tab  -->
 </body>
 </html>

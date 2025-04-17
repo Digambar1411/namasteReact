@@ -14,4 +14,6 @@ const parent2 = React.createElement(
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render([parent1, parent2]);
+console.log('before', document.getElementById('root').innerHTML)
+root.render(parent1);
+console.log('after', document.getElementById('root').innerHTML)
